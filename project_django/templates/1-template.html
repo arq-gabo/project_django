@@ -1,0 +1,42 @@
+    <html>
+    <body>
+      {% include "upper/bar.html" %}
+    <h1 style="color : red">
+    "Hello World, this is my firts template"
+    </h1>
+
+    {# add comments #}
+
+    {% comment %}
+      line 1 if commets
+      line 2 of comments
+      line 3 of comments
+    {% endcomment %}
+
+    {% if name_person == 'Gabriel' %}
+    <p>The course is taught by the professor</p>
+    {% else %}
+    <p>The course is taught by the substitute teacher</p>
+
+    {% endif %}
+
+    <p>the teacher's name is: {{name_person|lower}} {{lastname_person.upper}}</p>
+    <p>The template show me now : {{moment_now.day}} / {{moment_now.month}} / {{moment_now.year}} </p>
+    <p><strong>subject_of_course</strong></p>
+    <p>
+      <ul>
+
+      {% if Subject %}
+        {% for theSubject in Subject %}
+
+              <li>{{theSubject|first|lower}}</li>
+
+        {% endfor %}
+
+        {% else %}
+           <p>Not show elements</p>
+      {% endif %}
+      </ul>
+    </p>
+    </body>
+    </html>
