@@ -4,9 +4,13 @@ from django.db import models
 
 class Customer(models.Model):
     name=models.CharField(max_length=30)
-    address=models.CharField(max_length=50)
+    address=models.CharField(max_length=50, verbose_name="The Address")
     email=models.EmailField(blank=True, null=True)
     phone=models.CharField(max_length=7)
+
+#    def __str__(self):
+#        return self.name
+
 
 class Articles(models.Model):
     name=models.CharField(max_length=30)
